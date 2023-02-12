@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,14 +20,28 @@ import util.LoggerUtil;
 public class CommonActions {
 	private WebDriver driver;
 	private WebDriverWait wait;
+	private JavascriptExecutor jsExecutor;
 
 	public CommonActions(CommonSteps commonSteps) {
 		driver = commonSteps.getDriver();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		jsExecutor = (JavascriptExecutor) driver;
+	}
+	
+	public void scrollToElement(WebElement element) {
+		jsExecutor.executeScript("arguments[0].scrollIntoView();", element);
 	}
 
 	public void waitForElementToAppear(WebElement element) {
 		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+	
+	public WebElement scopedFindElementByCss(WebElement element, String cssSelector) {
+		return element.findElement(By.cssSelector(cssSelector));
+	}
+	
+	public WebElement scopedFindElementByXpath(WebElement element, String xpath) {
+		return element.findElement(By.xpath(xpath));
 	}
 
 	public void waitForElementsToBePresent(By locator) {

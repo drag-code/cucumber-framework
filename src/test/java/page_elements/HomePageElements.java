@@ -21,6 +21,8 @@ public class HomePageElements extends BasePage {
 	public WebElement cartButton;
 	@FindBy(css = "div.products .product")
 	public List<WebElement> products;
+	@FindBy(css = ".cart-preview .cart-items .cart-item")
+	public List<WebElement> itemsInCart;
 
 	public HomePageElements(WebDriver driver) {
 		super(driver);

@@ -61,6 +61,7 @@ public class GreenKartHomePageSteps {
 	@When("User selects {string} and {string} and clicks add to cart button")
 	public void user_selects_and_and_clicks_add_to_cart_button(String productName, String quantity) {
 	    homePageActions.addProductToCart(productName, quantity);
+	    commonActions.hardwaitFor(2);
 	}
 	@When("Clicks on cart section")
 	public void clicks_on_cart_section() {
@@ -68,7 +69,7 @@ public class GreenKartHomePageSteps {
 	}
 	@Then("The quantity and productName displayed should match with {string} and {string} selected")
 	public void the_quantity_and_product_name_displayed_should_match_with_and_selected(String productName, String quantity) {
-	    
+		assertTrue(homePageActions.productNameAndQuantityMatches(productName, quantity));
 	}
 	
 	@Then("{string} status code should be {int}")
