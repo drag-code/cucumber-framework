@@ -66,6 +66,7 @@ public class HomePageSteps {
 	@When("Clicks on cart section")
 	public void clicks_on_cart_section() {
 		homePageActions.showCart();
+		commonActions.hardwaitFor(2);
 	}
 	@Then("The quantity and productName displayed should match with {string} and {string} selected")
 	public void the_quantity_and_product_name_displayed_should_match_with_and_selected(String productName, String quantity) {

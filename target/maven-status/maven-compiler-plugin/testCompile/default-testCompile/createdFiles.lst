@@ -1,8 +1,0 @@
-page_actions\CommonActions.class
-page_actions\HomePageActions.class
-page_elements\HomePageElements.class
-steps\CommonSteps.class
-testRunner\TestRunner.class
-steps\GreenKartHomePageSteps.class
-com\main\cucumber_framework\AppTest.class
-util\BaseTest.class

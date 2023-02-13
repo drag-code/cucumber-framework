@@ -9,8 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = { "features" }, 
 		glue = { "steps" }, 
-		plugin = { "pretty", "html:target/html-report/topDealsReport.html" },
-		tags = "@T2",
-		dryRun = false
+		plugin = { "pretty", "html:target/html-report/smokeReport.html" },
+		tags = "@Smoke"
 	)
-public class TopDealsTestRunner { }
+public class SmokeTestRunner { }

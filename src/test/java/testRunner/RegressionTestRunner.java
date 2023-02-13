@@ -11,4 +11,4 @@ import io.cucumber.junit.CucumberOptions;
 		glue = { "steps" }, 
 		plugin = { "pretty", "html:target/html-report/regressionReport.html" }
 	)
-public class TestRunner { }
+public class RegressionTestRunner { }

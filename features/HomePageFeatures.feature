@@ -12,12 +12,12 @@ Feature: Green Kart Home Page Scenarios
       | cauliflower |
       | apple       |
 
-  @Smoke @T1
+  @Smoke
   Scenario: Displaying products when Home Page loads
     Given User is on homepage
     Then User should be able to see a list of products
 
-  @Test
+  @Smoke
   Scenario Outline: Adding products to the cart
     Given User is on homepage
     When User selects '<productName>' and '<quantity>' and clicks add to cart button
@@ -30,7 +30,6 @@ Feature: Green Kart Home Page Scenarios
       | Carrot      |        2 |
       | Capsicum    |        2 |
 
-  @Regression
   Scenario Outline: Links inside the header section are working
     Given User is on homepage
     When User clicks '<linkName>'

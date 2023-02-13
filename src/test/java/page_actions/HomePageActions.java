@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import page_elements.HomePageElements;
 import steps.CommonSteps;
+import util.LoggerUtil;
 import util.StringUtil;
 
 public class HomePageActions {
@@ -49,15 +50,15 @@ public class HomePageActions {
 		commonActions.hardwaitFor(3);
 		WebElement targetProduct = homePageElements.products.stream()
 				.filter(product -> {
+					LoggerUtil.logInfo("SELECTED PRODUCT = " + commonActions.getText(commonActions.scopedFindElementByCss(product, "h4.product-name")));
 					return commonActions.getText(commonActions.scopedFindElementByCss(product, "h4.product-name")).contains(productName);
 				})
 				.findFirst()
 				.get();
 		selectQuantity(targetProduct, quantity);
-		commonActions.scopedFindElementByCss(targetProduct, ".product-action button")
-				.click();
-		commonActions.waitForElementToBeClickable(targetProduct);
 		commonActions.scrollToElement(targetProduct);
+		commonActions.waitForElementToBeClickable(targetProduct);
+		commonActions.click(commonActions.scopedFindElementByCss(targetProduct, ".product-action button"));
 	}
 
 	public void selectQuantity(WebElement targetProduct, String qty) {

@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import page_elements.TopDealsPageElements;
 import steps.CommonSteps;
+import util.LoggerUtil;
 import util.StringUtil;
 
 public class TopDealsPageActions {
@@ -33,6 +34,7 @@ public class TopDealsPageActions {
 		return topDealsPageElements.pages.stream().allMatch(page -> {
 			commonActions.click(page);
 			int actualSize = getResultRowsCount();
+			LoggerUtil.logInfo("ACTUAL PAGE SIZE = " + actualSize);
 			commonActions.hardwaitFor(2);
 			return actualSize <= expectedSize;
 		});
