@@ -7,9 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import util.BasePage;
-
-public class HomePageElements extends BasePage {
+public class HomePageElements {
 
 	WebDriver driver;
 
@@ -25,7 +23,6 @@ public class HomePageElements extends BasePage {
 	public List<WebElement> itemsInCart;
 
 	public HomePageElements(WebDriver driver) {
-		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}

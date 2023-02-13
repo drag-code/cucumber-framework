@@ -75,6 +75,10 @@ public class CommonActions {
 	public void clickOnLinkByText(String linkText) {
 		driver.findElement(By.linkText(linkText)).click();
 	}
+	
+	public void click(WebElement element) {
+		element.click();
+	}
 
 	public void goToURL(String URL) {
 		driver.get(URL);

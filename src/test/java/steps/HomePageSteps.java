@@ -14,11 +14,11 @@ import page_actions.HomePageActions;
 import util.Constants;
 import util.StringUtil;
 
-public class GreenKartHomePageSteps {
+public class HomePageSteps {
 	CommonActions commonActions;
 	HomePageActions homePageActions;
 
-	public GreenKartHomePageSteps(CommonActions commonActions, HomePageActions homePageActions) {
+	public HomePageSteps(CommonActions commonActions, HomePageActions homePageActions) {
 		this.commonActions = commonActions;
 		this.homePageActions = homePageActions;
 	}

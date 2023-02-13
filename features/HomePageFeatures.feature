@@ -12,7 +12,7 @@ Feature: Green Kart Home Page Scenarios
       | cauliflower |
       | apple       |
 
-  @Smoke
+  @Smoke @T1
   Scenario: Displaying products when Home Page loads
     Given User is on homepage
     Then User should be able to see a list of products
